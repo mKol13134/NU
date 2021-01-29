@@ -3,8 +3,6 @@ import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } fr
 import CourseList from './components/CourseList';
 
 
-
-
 const Banner = ({ title }) => (
   <Text style={styles.banner}>{ title || '[loading...]' }</Text>
 );
@@ -15,7 +13,6 @@ const fetchSchedule = async () => {
   const json = await response.json();
   setSchedule(json);
 };
-
 
 
 const App = () => {
