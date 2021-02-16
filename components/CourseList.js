@@ -9,7 +9,7 @@ import { terms, termMap, getCourseTerm } from '../utils/course';
 //const termMap = { F: 'Fall', W: 'Winter', S: 'Spring'};
 //const terms = Object.values(termMap);
 
-const CourseList = ({ courses }) => {
+const CourseList = ({ courses, view }) => {
   const [selectedTerm, setSelectedTerm] = useState('Fall');
   const termCourses = courses.filter(course => selectedTerm === getCourseTerm(course));
 
@@ -17,7 +17,7 @@ const CourseList = ({ courses }) => {
     <View>
       <TermSelector terms ={terms} selectedTerm={selectedTerm} setSelectedTerm = {setSelectedTerm} />
         <ScrollView>
-          <CourseSelector courses={termCourses} />
+          <CourseSelector courses={termCourses} view = {view} />
         </ScrollView>
     </View>
   );
